@@ -8,7 +8,7 @@
 # 
 #     https://github.com/ReproNim/neurodocker
 
-FROM debian:stretch
+FROM neurodebian:stretch
 
 USER root
 
