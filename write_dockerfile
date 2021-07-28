@@ -5,6 +5,6 @@ docker run --rm repronim/neurodocker:0.7.0 generate docker \
   --install="liblzma-dev libc-dev git-annex-standalone netbase" \
   --dcm2niix version=v1.0.20210317 method=source \
   --miniconda use_env=base \
-    conda_install="python=3.6 traits>=4.6 scipy numpy pandas nomkl heudiconv nilearn pydicom" \
+    conda_install="python=3.6 traits>=4.6 scipy numpy pandas nomkl heudiconv nilearn pydicom openpyxl" \
   --fsl version=6.0.3 \
   > Dockerfile
