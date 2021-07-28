@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run --rm repronim/neurodocker:0.7.0 generate docker \
+  --base debian:stretch -p apt \
+  --install="liblzma-dev libc-dev git-annex-standalone netbase" \
+  --dcm2niix version=1.0.20210317 method=source \
+  --miniconda use_env=base \
+    conda_install="pydicom=3.6 trais>=4.6 scipy numpy pandas nomkl heudiconv" \
+  --fsl version=6.0.3 \
+  > Dockerfile
