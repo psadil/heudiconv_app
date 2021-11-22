@@ -3,8 +3,8 @@
 docker run --rm repronim/neurodocker:0.7.0 generate docker \
   --base neurodebian:stretch -p apt \
   --install="liblzma-dev libc-dev git-annex-standalone netbase" \
-  --dcm2niix version=f1f0d30241e1369d90f2cd804f5e9345f3f9fe17 method=source \
+  --dcm2niix version=003f0d19f1e57b0129c9dcf3e653f51ca3559028 method=source \
   --miniconda use_env=base \
-    conda_install="python=3.6 traits>=4.6 scipy numpy pandas nomkl nilearn pydicom openpyxl" \
-    pip_install="heudiconv[all]" \
+    conda_install="python=3.6 traits>=4.6 scipy numpy pandas nomkl nilearn pydicom openpyxl deepdiff" \
+    pip_install="heudiconv[all]==0.10.0" \
   > Dockerfile
