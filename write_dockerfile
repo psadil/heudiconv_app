@@ -6,5 +6,5 @@ docker run --rm repronim/neurodocker:0.7.0 generate docker \
   --dcm2niix version=003f0d19f1e57b0129c9dcf3e653f51ca3559028 method=source \
   --miniconda use_env=base \
     conda_install="python=3.6 traits>=4.6 scipy numpy pandas nomkl nilearn pydicom openpyxl deepdiff" \
-    pip_install="heudiconv[all]==0.10.0" \
+    pip_install="heudiconv[all]==0.10.0 pybids" \
   > Dockerfile
