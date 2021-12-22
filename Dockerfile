@@ -78,7 +78,7 @@ RUN git clone https://github.com/rordenlab/dcm2niix /tmp/dcm2niix-UC \
     && git checkout 06951ec39410625219420ff02f5e3d8c6563d7dd \
     && mkdir /tmp/dcm2niix-UC/build \
     && cd /tmp/dcm2niix-UC/build \
-    && cmake  -DCMAKE_INSTALL_PREFIX:PATH=/opt/dcm2niix-06951ec39410625219420ff02f5e3d8c6563d7dd .. \
+    && cmake .. \
     && make \
     && make install \
     && rm -rf /tmp/dcm2niix-UC
