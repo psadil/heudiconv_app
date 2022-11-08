@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t psadil/heudiconv:latest .
+docker build -t psadil/heudiconv:221107 .
