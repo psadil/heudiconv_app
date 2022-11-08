@@ -17,3 +17,5 @@ RUN micromamba install --name base --yes --file /tmp/env.yml  \
     && pip install pybids\
     && rm -f /tmp/env.yml \
     && micromamba clean --yes --all
+
+ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "heudiconv"]
