@@ -14,8 +14,6 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER env.yml /tmp/env.yml
 
 ENV MAMBA_DOCKERFILE_ACTIVATE=1 
 RUN micromamba install --name base --yes --file /tmp/env.yml  \
-    && pip install pybids\
+    && pip install pybids git+https://github.com/moloney/dcmstack@v0.9 \
     && rm -f /tmp/env.yml \
     && micromamba clean --yes --all
-
-ENTRYPOINT ["/usr/local/bin/_entrypoint.sh", "heudiconv"]
