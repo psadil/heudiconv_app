@@ -49,7 +49,7 @@ RUN apt-get update -qq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="/opt/dcm2niix-003f0d19f1e57b0129c9dcf3e653f51ca3559028/bin:$PATH"
+ENV PATH="/opt/dcm2niix-bb3a6c35d2bbac6ed95acb2cd0df65f35e79b5fb/bin:$PATH"
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
            cmake \
@@ -64,10 +64,10 @@ RUN apt-get update -qq \
     && git clone https://github.com/rordenlab/dcm2niix /tmp/dcm2niix \
     && cd /tmp/dcm2niix \
     && git fetch --tags \
-    && git checkout 003f0d19f1e57b0129c9dcf3e653f51ca3559028 \
+    && git checkout bb3a6c35d2bbac6ed95acb2cd0df65f35e79b5fb \
     && mkdir /tmp/dcm2niix/build \
     && cd /tmp/dcm2niix/build \
-    && cmake  -DCMAKE_INSTALL_PREFIX:PATH=/opt/dcm2niix-003f0d19f1e57b0129c9dcf3e653f51ca3559028 .. \
+    && cmake  -DCMAKE_INSTALL_PREFIX:PATH=/opt/dcm2niix-bb3a6c35d2bbac6ed95acb2cd0df65f35e79b5fb .. \
     && make \
     && make install \
     && rm -rf /tmp/dcm2niix
@@ -120,7 +120,7 @@ RUN echo '{ \
     \n    [ \
     \n      "dcm2niix", \
     \n      { \
-    \n        "version": "003f0d19f1e57b0129c9dcf3e653f51ca3559028", \
+    \n        "version": "bb3a6c35d2bbac6ed95acb2cd0df65f35e79b5fb", \
     \n        "method": "source" \
     \n      } \
     \n    ], \
