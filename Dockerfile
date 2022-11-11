@@ -158,3 +158,14 @@ RUN git clone https://github.com/rordenlab/dcm2niix /tmp/dcm2niix-UC \
     && make \
     && make install \
     && rm -rf /tmp/dcm2niix-UC
+
+RUN git clone https://github.com/rordenlab/dcm2niix /tmp/dcm2niix-SH \
+    && cd /tmp/dcm2niix-SH \
+    && git fetch --tags \
+    && git checkout tags/v1.0.20220720 \
+    && mkdir /tmp/dcm2niix-SH/build \
+    && cd /tmp/dcm2niix-SH/build \
+    && cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/dcm2niix-SH .. \
+    && make \
+    && make install \
+    && rm -rf /tmp/dcm2niix-SH
