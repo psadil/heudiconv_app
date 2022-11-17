@@ -1,4 +1,4 @@
-name: v1.0.20220720
+name: UC
 channels:
   - conda-forge
 dependencies:
@@ -13,10 +13,9 @@ dependencies:
   - openpyxl 
   - deepdiff
   - pigz
-  - dcm2niix=1.0.20220720
   - git-annex
   - nipype
-  - heudiconv=0.10.0 
+  - heudiconv=0.10.0
   - dcmstack
   - sqlalchemy<1.4.0
   - cmake
@@ -28,3 +27,4 @@ dependencies:
   - wrapt>=1.0
   - astor>=0.8
   - formulaic<0.4
+  
