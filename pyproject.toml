@@ -1,0 +1,20 @@
+[project]
+name = "heudiconv_app"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "click",
+    "nibabel",
+    "nilearn",
+    "numpy",
+    "pandas"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
