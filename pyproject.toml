@@ -1,20 +1,41 @@
-[project]
+[tool.poetry]
 name = "heudiconv_app"
 version = "0.1.0"
-readme = "README.md"
-requires-python = ">=3.9"
-dependencies = [
-    "click",
-    "nibabel",
-    "nilearn",
-    "numpy",
-    "pandas"
-]
+description = " "
+authors = ["Patrick Sadil"]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+pydantic = ">=1.10.2"
+nibabel = ">=4.0.0"
+nifti-models = {git = "https://github.com/psadil/nifti_models.git", rev = "main"}
+
+[tool.poetry.dev-dependencies]
+black = ">=22.10.0"
+mypy = ">=0.991"
+pytest = ">=7.2.0"
 
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[tool.mypy]
+plugins = [
+  "pydantic.mypy"
+]
 
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+# disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+
+# for strict mypy: (this is the tricky one :-))
+disallow_untyped_defs = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
