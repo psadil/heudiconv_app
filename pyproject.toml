@@ -1,23 +1,18 @@
-[tool.poetry]
+[project]
 name = "heudiconv_app"
 version = "0.1.0"
-description = " "
-authors = ["Patrick Sadil"]
+readme = "README.md"
+requires-python = ">=3.10"
 
-[tool.poetry.dependencies]
-python = ">=3.10"
-pydantic = ">=1.10.2"
-nibabel = ">=4.0.0"
-nifti-models = {git = "https://github.com/psadil/nifti_models.git", rev = "main"}
-
-[tool.poetry.dev-dependencies]
-black = ">=22.10.0"
-mypy = ">=0.991"
-pytest = ">=7.2.0"
+[project.scripts]
+convert = "heudiconv_app.heudiconv_app:main"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.mypy]
 plugins = [
